@@ -1,1 +1,2 @@
-export const summaryExample = "o javasdksaopdksaopkfafja fosjdfadokokfopkdsaf jijfdsaoipf ok"
+export const summaryExample =
+  "o javasdksaopdksaopkfafja fosjdfadokokfopkdsaf jijfdsaoipf ok"
