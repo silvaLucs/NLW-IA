@@ -3,11 +3,11 @@ import express, { response } from "express"
 
 import { download } from "./download.js"
 import { transcribe } from "./utils/transcribe.js"
-import { summarize } from "./utils/summarize.js"
+import { summarize } from "./summarize.js"
 
 const app = express()
-app.use(cors())
 app.use(express.json())
+app.use(cors())
 
 app.get("/summary/:id", async (request, response) => {
   await download(request.params.id)
@@ -18,7 +18,7 @@ app.get("/summary/:id", async (request, response) => {
 })
 
 app.post("/summary", async (request, response) => {
-  const result = summarize(request.body.text)
+  const result = await summarize(request.body.text)
   return response.json({ result })
 })
 
